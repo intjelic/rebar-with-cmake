@@ -17,6 +17,7 @@ jobs:
           install-rebar3: true
       - run: |
           rebar3 compile
+          rebar3 shell --eval "yolo:abc(), erlang:halt()"
 
   macos:
     runs-on: macos-latest
@@ -28,6 +29,7 @@ jobs:
           install-rebar3: true
       - run: |
           rebar3 compile
+          rebar3 shell --eval "yolo:abc(), erlang:halt()"
 
   windows:
     runs-on: windows-latest
@@ -39,3 +41,4 @@ jobs:
           install-rebar3: true
       - run: |
           rebar3 compile
+          rebar3 shell --eval "yolo:abc(), erlang:halt()"
