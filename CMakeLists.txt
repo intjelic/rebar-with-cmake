@@ -29,6 +29,7 @@ set_target_properties(beam-yolo PROPERTIES OUTPUT_NAME "beam-yolo" PREFIX "")
 # Set output directory to priv/
 set_target_properties(beam-yolo PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/priv"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/priv"
 )
 
 target_link_libraries(beam-yolo PRIVATE ei)
