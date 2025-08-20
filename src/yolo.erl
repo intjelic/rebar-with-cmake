@@ -1,6 +1,6 @@
 -module(yolo).
 
--export([abc/1]).
+-export([abc/0, abc/1]).
 -nifs([abc_raw/1]).
 
 -on_load(init/0).
@@ -20,6 +20,9 @@ init() ->
     end,
     io:format("Loading 'yolo' NIF from ~s~n", [SoName]),
     erlang:load_nif(SoName, 0).
+
+abc() ->
+    abc("Erlangsters").
 
 abc(Name) ->
     abc_raw(Name).
