@@ -32,4 +32,11 @@ set_target_properties(beam-yolo PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/priv"
 )
 
+# Add special linker flags for macOS
+if(APPLE)
+    set_target_properties(beam-yolo PROPERTIES
+        LINK_FLAGS "-flat_namespace -undefined suppress"
+    )
+endif()
+
 target_link_libraries(beam-yolo PRIVATE ei)
