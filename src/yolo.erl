@@ -5,10 +5,12 @@
 
 -on_load(init/0).
 
+-define(APPNAME, rebar_with_cmake).
+
 init() ->
     io:format("yolo:init:aaa~n"),
     LibName = "beam-yolo",
-    SoName = case code:priv_dir(?MODULE) of
+    SoName = case code:priv_dir(?APPNAME) of
         {error, bad_name} ->
             io:format("yolo:init:bbb~n"),
             case filelib:is_dir(filename:join(["..", priv])) of
